@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel=" stylesheet" type="text/css" href="../layui/css/layui.css" />
+
+	</head>
+
+	<body>
+
+		<div id="box" style="margin-top: 20px;width: 350px;height: 220px;">
+			<form class="layui-form" action="#">
+				<div class="layui-form-item">
+					<label class="layui-form-label">当前密码</label>
+					<div class="layui-input-block">
+						<input type="text" name="curpass" required lay-verify="curpass" placeholder="请输入当前密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">新密码</label>
+					<div class="layui-input-block">
+						<input type="text" name="newpass" required lay-verify="newpass" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">确认密码</label>
+					<div class="layui-input-block">
+						<input type="text" name="renewpass" required lay-verify="renewpass" placeholder="请确定密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</body>
+
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<script type="text/javascript"></script>
+
+	<script>
+		
+		layui.use(['layer','form'],function(){
+			var layer = layui.layer;
+			var form = layui.form;
+			temp = null; 		// 用于两次密码是否一致的判断
+			form.verify({ 		// 进行表单字段的验证 
+				curpass:function(value,item){ 	// 这里的 curpass , 是在 layui-varify 字段里面的字符串，想当于是 id
+//					alert("ss");
+					if(value.length<6){	
+						return '密码长度大于6'
+					}
+				},
+				newpass:function(value,item){
+					if(value.length<6){
+						return '密码长度应该大于6个字符'
+					}
+					temp = value;
+				},
+				renewpass:function(value,item){
+					
+					if(value.length<6){
+						return '密码长度应该大于6个字符'
+					}
+					if(value!=temp){
+						return '两次输入密码不一致'
+					}
+				}
+			});
+			
+			
+			 form.on('submit(formDemo)', function(data){
+			    layer.alert(JSON.stringify(data.field), {
+			      title: '最终的提交信息'
+			    });
+			    return false;
+			  });
+			
+			// 监听 form 表单的数据，原密码，新密码满足正则表达式规则,检查两次密码是否一致
+			
+			
+			
+		});
+		
+	</script>
+
+</html>

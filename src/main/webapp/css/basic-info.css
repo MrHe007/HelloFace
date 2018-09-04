@@ -1,0 +1,12 @@
+
+#breadcrumb{
+	/*border: 1px solid red;*/
+	 margin-top: 10px;
+	 margin-left: 20px;
+	 font-size: 14px;
+	 border-bottom: 1px solid #e5e5e5;
+	 height: 39px;
+     line-height: 39px;
+     margin-bottom: 15px;
+     overflow: hidden;
+	}

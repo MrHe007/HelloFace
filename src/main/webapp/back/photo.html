@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+	
+	</head>
+	<body>
+		
+		<div id="layer-photos-demo" class="layer-photos-demo">
+		  <img layer-pid="图片id，可以不写" layer-src="大图地址" src="img/1.jpg" alt="图片名">
+		  <img layer-pid="图片id，可以不写" layer-src="大图地址" src="缩略图" alt="图片名">
+		</div>
+	</body>
+	
+	<script type="text/javascript" src="layui/layui.js"></script>
+	<script>
+		layer.photos({
+		  photos: '#layer-photos-demo'
+		  ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+		}); 
+		
+	</script>
+</html>

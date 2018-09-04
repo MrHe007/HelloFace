@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel=" stylesheet" type="text/css" href="layui/css/layui.css" />
+		
+	</head>
+	<body>
+		
+		<p id="test">hello</p>	
+		<p id="test1">
+			<span> hello</span>
+		</p>	
+		<img src="img/captcha.jpg" />
+		<img id="bg" src="img/error2.png" />
+		
+	</body>
+	
+	<script type="text/javascript" src="layui/layui.js"></script>
+	
+	<script>
+		layui.use(['layer'],function(){
+			
+			var $ = layui.jquery;
+			
+			console.log( $("img").get(1).val); 		// get(num) : 得到的是 dom 对象，可以直接 dom.src 得到属性的值,改变直接 dom.src = 'a.jpg'
+			console.log( $( $("img").get(1)).attr('src')); 	// $(this) : 将 dom 转为 jq 对象，用 jq 方法 , jq.attr('src','a.jpg')
+			console.log($("#bg").attr("src") );
+			
+			console.log($("#test1").html('你好'));		// 如果有子标签，则是返回对象
+			console.log($("#test1").text()); 			// 得到内部的 字符
+			console.log($("#test1").val());				// 只可以操作 input 标签，其他元素无效
+			
+			// 如果想改变图片地址, src = 'a.jpg'
+			
+//			$("img").each(function(i,domElem){ // 参数的类型是 index 和 dom 对象
+//				console.log(this.src+"  "+i);
+//				console.log(domElem);
+//			});
+		})
+		
+	</script>
+</html>

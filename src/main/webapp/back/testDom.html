@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<p id="pro">
+			<span>hello</span>
+		</p>
+		
+	</body>
+	
+	<script>
+		
+		var txt = document.getElementById("pro"); 	// 得到的是 dom 对象  <p id="pro">hello</p>
+		console.log(txt);
+		console.log(txt.nodeName);					// 结点的名字
+		console.log(txt.innerHTML);					// 	<spen>hello</spen>
+		console.log(txt.childNodes);				// 
+		console.log(txt.firstChild.nodeValue);
+		
+		
+	</script>
+	
+</html>

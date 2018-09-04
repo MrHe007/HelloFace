@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel=" stylesheet" type="text/css" href="../layui/css/layui.css" />
+
+	</head>
+
+	<body>
+
+		<div id="box" style="margin-top: 20px;width: 450px;height: 300px;">
+			<form class="layui-form" action="#">
+				<div class="layui-form-item">
+					<label class="layui-form-label">当前密码</label>
+					<div class="layui-input-inline">
+						<input type="text" id="curpass" name="curpass" required lay-verify="curpass" placeholder="请输入当前密码" autocomplete="off" class="layui-input">
+					</div>
+					<div class="layui-form-mid layui-word-aux" id="curpass_tip">
+						<!--<img src="../img/error2.png" />-->
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">新密码</label>
+					<div class="layui-input-block">
+						<input type="text" name="newpass" required lay-verify="newpass" placeholder="请输入新密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">确认密码</label>
+					<div class="layui-input-block">
+						<input type="text" name="renewpass" required lay-verify="renewpass" placeholder="请确定密码" autocomplete="off" class="layui-input">
+					</div>
+				</div>
+				
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+						<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</body>
+
+	<script type="text/javascript" src="../layui/layui.js"></script>
+	<script type="text/javascript" src="../js/setpass2.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.8.3.min.js"></script>
+
+</html>
